@@ -1,0 +1,138 @@
+{
+  "name": "react-native-smartcapture-sdk",
+  "version": "1.0.0",
+  "description": "Production-ready React Native SDK for camera capture, gallery selection, and circular or rectangular image cropping with built-in permission helpers.",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "react-native": "./src/index.ts",
+  "source": "./src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "lib",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "exports": {
+    ".": {
+      "types": "./lib/typescript/src/index.d.ts",
+      "import": "./lib/module/index.js",
+      "require": "./lib/commonjs/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "build": "bob build",
+    "clean": "rm -rf lib",
+    "prepare": "bob build",
+    "prepublishOnly": "yarn clean && yarn typecheck && yarn build",
+    "release": "npm publish",
+    "release:patch": "npm version patch --no-git-tag-version && yarn release",
+    "release:minor": "npm version minor --no-git-tag-version && yarn release",
+    "release:major": "npm version major --no-git-tag-version && yarn release",
+    "example": "yarn --cwd example",
+    "example:start": "yarn --cwd example start",
+    "example:ios": "yarn --cwd example ios",
+    "example:android": "yarn --cwd example android"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-library",
+    "ios",
+    "android",
+    "camera",
+    "image-picker",
+    "photo-capture",
+    "profile-picture",
+    "profile-image",
+    "avatar",
+    "crop",
+    "image-cropper",
+    "circular-crop",
+    "rectangular-crop",
+    "permissions",
+    "vision-camera",
+    "smart-capture",
+    "smartcapture",
+    "sdk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwiftCrew/react-native-smartcapture-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SwiftCrew/react-native-smartcapture-sdk/issues"
+  },
+  "homepage": "https://github.com/SwiftCrew/react-native-smartcapture-sdk#readme",
+  "author": "SwiftCrew <hello@swiftcrew.dev>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "@react-native-community/image-editor": ">=4.0.0 <5.0.0",
+    "react": ">=17.0.0",
+    "react-native": ">=0.70.0",
+    "react-native-gesture-handler": ">=2.0.0",
+    "react-native-image-picker": ">=7.0.0 <9.0.0",
+    "react-native-permissions": ">=3.0.0 <6.0.0",
+    "react-native-reanimated": ">=3.0.0",
+    "react-native-svg": ">=13.0.0",
+    "react-native-vision-camera": ">=3.0.0 <5.0.0",
+    "react-native-worklets": ">=0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "react-native-vision-camera": {
+      "optional": true
+    },
+    "react-native-svg": {
+      "optional": true
+    },
+    "react-native-worklets": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@react-native-community/image-editor": "4.2.0",
+    "@types/react": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "react": "18.2.0",
+    "react-native": "0.74.0",
+    "react-native-builder-bob": "^0.23.0",
+    "react-native-gesture-handler": "2.16.2",
+    "react-native-image-picker": "7.1.2",
+    "react-native-permissions": "4.1.5",
+    "react-native-reanimated": "3.10.1",
+    "react-native-svg": "15.3.0",
+    "react-native-vision-camera": "4.5.3",
+    "typescript": "^5.3.0"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}

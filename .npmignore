@@ -1,0 +1,40 @@
+# Development
+example/
+node_modules/
+.yarn/
+.yarnrc.yml
+
+# Config files
+.gitignore
+.editorconfig
+.watchmanconfig
+.eslintrc.js
+.eslintignore
+tsconfig.json
+tsconfig.build.json
+
+# Build artifacts
+*.log
+*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test
+__tests__/
+__mocks__/
+coverage/
+jest.config.js
+.github/
+*.log
+.env
+android/build/
+ios/build/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.orig
