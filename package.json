@@ -1,6 +1,6 @@
 {
   "name": "react-native-smartcapture-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready React Native SDK for camera capture, gallery selection, and circular or rectangular image cropping with built-in permission helpers.",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
